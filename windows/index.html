@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <script>
+        window.pixelId = "69afa71e97adb9c73148f741";
+        var a = document.createElement("script");
+        a.setAttribute("async", "");
+        a.setAttribute("defer", "");
+        a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+        document.head.appendChild(a);
+    </script>
+    <script>
+        window.pixelId = "69b3eed763171e866d5878b9";
+        var a = document.createElement("script");
+        a.setAttribute("async", "");
+        a.setAttribute("defer", "");
+        a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+        document.head.appendChild(a);
+    </script>
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-subids async defer></script>
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1453980406182561');
+        fbq('init', '2379632412865412');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1453980406182561&ev=PageView&noscript=1" />
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=2379632412865412&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Windows – Smart Select</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        /* =====================================================
+       RESET & BASE
+    ===================================================== */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --color-base: #f9f9f9;
+            --color-contrast: #111111;
+            --color-contrast-2: #636363;
+            --color-accent-blue: #18a0d1;
+            --color-cta-red: #e42628;
+            --color-green-btn: #4caf50;
+            --color-white: #ffffff;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-size-small: 0.9rem;
+            --font-size-medium: 1.05rem;
+            --font-size-large: clamp(1.39rem, 1.39rem + ((1vw - 0.2rem) * 0.767), 1.85rem);
+            --font-size-xlarge: clamp(1.85rem, 1.85rem + ((1vw - 0.2rem) * 1.083), 2.5rem);
+            --font-size-xxlarge: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 1.283), 3.27rem);
+            --spacing-10: 1rem;
+            --spacing-20: min(1.5rem, 2vw);
+            --spacing-30: min(2.5rem, 3vw);
+            --spacing-40: min(4rem, 5vw);
+            --spacing-50: min(6.5rem, 8vw);
+            --spacing-60: min(10.5rem, 13vw);
+            --content-max: 620px;
+            --wide-max: 1280px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--color-base);
+            color: var(--color-contrast);
+            font-family: var(--font-body);
+            font-size: var(--font-size-medium);
+            font-weight: 400;
+            line-height: 1.55;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--color-contrast);
+            font-family: var(--font-body);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        /* =====================================================
+       COUNTDOWN STICKY BAR
+    ===================================================== */
+        .countdown-bar {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            background: #e42628;
+            color: #fff;
+            text-align: center;
+            padding: 12px 16px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, .25);
+            font-family: var(--font-body);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .countdown-label {
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        .countdown-cards {
+            display: inline-flex;
+            align-items: flex-start;
+            gap: 4px;
+        }
+
+        .time-group {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .time-digits {
+            display: inline-flex;
+            flex-direction: row;
+            gap: 2px;
+        }
+
+        .time-card {
+            background: #fff;
+            color: #000;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px solid #000;
+            min-width: 28px;
+            text-align: center;
+            line-height: 1;
+            display: inline-block;
+        }
+
+        .time-label {
+            font-size: 11px;
+            color: #fff;
+            font-style: italic;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .time-separator {
+            font-size: 22px;
+            font-weight: bold;
+            color: #fff;
+            margin: 8px 4px 0;
+            line-height: 1;
+        }
+
+        /* =====================================================
+       MAIN SECTION (Blue background)
+    ===================================================== */
+        .main-section {
+            background-color: #18a0d1;
+            color: #fff;
+        }
+
+        /* =====================================================
+       POST CONTENT
+    ===================================================== */
+        .post-content {
+            padding-left: var(--spacing-50);
+            padding-right: var(--spacing-50);
+        }
+
+        /* =====================================================
+       TYPOGRAPHY HELPERS
+    ===================================================== */
+        .text-center {
+            text-align: center;
+        }
+
+        .font-small {
+            font-size: var(--font-size-small);
+        }
+
+        .font-medium {
+            font-size: var(--font-size-medium);
+        }
+
+        .font-large {
+            font-size: var(--font-size-large);
+        }
+
+        .font-xlarge {
+            font-size: var(--font-size-xlarge);
+        }
+
+        .font-xxlarge {
+            font-size: var(--font-size-xxlarge);
+        }
+
+        .px-50 {
+            padding-left: var(--spacing-50);
+            padding-right: var(--spacing-50);
+        }
+
+        .px-60 {
+            padding-left: var(--spacing-60);
+            padding-right: var(--spacing-60);
+        }
+
+        .px-40 {
+            padding-left: var(--spacing-40);
+            padding-right: var(--spacing-40);
+        }
+
+        /* =====================================================
+       STRIKETHROUGH RED
+    ===================================================== */
+        .price-strike {
+            color: #e42628;
+        }
+
+        /* =====================================================
+       BUTTON
+    ===================================================== */
+        .btn-buy {
+            display: block;
+            margin: 0 auto;
+            width: 75%;
+            background-color: #4caf50;
+            color: #fff;
+            font-family: var(--font-body);
+            font-size: var(--font-size-medium);
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            padding: 0.9rem 1.5rem;
+            border-radius: 20px;
+            box-shadow: 6px 6px 9px rgba(0, 0, 0, .2);
+            border: none;
+            cursor: pointer;
+            transition: background .2s ease, transform .15s ease;
+            letter-spacing: .03em;
+        }
+
+        .btn-buy:hover {
+            background-color: #388e3c;
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+
+        .btn-wrap {
+            display: flex;
+            justify-content: center;
+            margin: var(--spacing-10) 0;
+        }
+
+        /* =====================================================
+       SEPARATOR
+    ===================================================== */
+        .separator {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, .5);
+            width: 100%;
+            margin: 0;
+        }
+
+        /* =====================================================
+       BLUE INFO BOX
+    ===================================================== */
+        .info-box {
+            background-color: #18a0d1;
+            margin-bottom: 80px;
+            padding: 0;
+        }
+
+        .info-box p {
+            color: #fff;
+        }
+
+        /* =====================================================
+       GALLERY
+    ===================================================== */
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            width: 100%;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .gallery figure {
+            margin: 0;
+            width: 100%;
+        }
+
+        .gallery figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+            box-shadow: 6px 6px 9px rgba(0, 0, 0, .2);
+            border: 2px solid #18a0d1;
+        }
+
+        /* =====================================================
+       FULL WIDTH IMAGES
+    ===================================================== */
+        .alignfull {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .alignfull img {
+            width: 100%;
+        }
+
+        /* =====================================================
+       SPACERS
+    ===================================================== */
+        .spacer-10 {
+            height: 10px;
+            display: block;
+        }
+
+        .spacer-20 {
+            height: 20px;
+            display: block;
+        }
+
+        .spacer-30 {
+            height: 30px;
+            display: block;
+        }
+
+        .spacer-40 {
+            height: 40px;
+            display: block;
+        }
+
+        /* =====================================================
+       FOOTER
+    ===================================================== */
+        footer {
+            background: var(--color-base);
+            padding: var(--spacing-50) var(--spacing-50);
+        }
+
+        .footer-inner {
+            max-width: var(--wide-max);
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-brand {
+            flex: 0 0 30%;
+        }
+
+        .footer-brand .site-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--color-contrast);
+            display: block;
+            margin-bottom: .3rem;
+        }
+
+        .footer-brand .site-tagline {
+            font-size: var(--font-size-small);
+            color: var(--color-contrast-2);
+        }
+
+        .footer-nav {
+            flex: 1;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .6rem;
+        }
+
+        .footer-nav a {
+            color: var(--color-contrast);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: var(--font-size-small);
+        }
+
+        .footer-nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== MOBILE FIXES ===== */
+        html,
+        body {
+            overflow-x: hidden !important;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                max-width: 100vw !important;
+            }
+
+            .main-section {
+                overflow-x: hidden !important;
+            }
+
+            .post-content {
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+                box-sizing: border-box !important;
+                max-width: 100vw !important;
+                overflow-x: hidden !important;
+            }
+
+            /* Full-width images borda a borda */
+            .alignfull {
+                margin-left: -16px !important;
+                margin-right: -16px !important;
+                width: calc(100% + 32px) !important;
+                max-width: calc(100% + 32px) !important;
+                overflow: hidden;
+            }
+
+            .alignfull img {
+                width: 100% !important;
+                height: auto !important;
+                display: block !important;
+            }
+
+            /* Gallery */
+            .gallery {
+                max-width: 100% !important;
+            }
+
+            .gallery figure img {
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            /* Font scaling */
+            .font-xlarge {
+                font-size: 1.4rem !important;
+            }
+
+            .font-xxlarge {
+                font-size: 1.6rem !important;
+            }
+
+            .font-large {
+                font-size: 1.2rem !important;
+            }
+
+            /* Reduce padding */
+            .px-60 {
+                padding-left: 8px !important;
+                padding-right: 8px !important;
+            }
+
+            .px-50 {
+                padding-left: 8px !important;
+                padding-right: 8px !important;
+            }
+
+            .px-40 {
+                padding-left: 8px !important;
+                padding-right: 8px !important;
+            }
+
+            /* Button full width */
+            .btn-buy {
+                width: 92% !important;
+                font-size: 1.1rem !important;
+                padding: 14px 20px !important;
+            }
+
+            /* Info box edge-to-edge */
+            .info-box {
+                margin-left: -16px !important;
+                margin-right: -16px !important;
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+                box-sizing: border-box !important;
+            }
+
+            /* Footer stacked */
+            .footer-brand {
+                flex: 0 0 100%;
+                text-align: center;
+            }
+
+            .footer-nav ul {
+                align-items: center;
+            }
+        }
+
+        /* ===== END MOBILE FIXES ===== */
+
+        /* =====================================================
+       FLOW SPACING
+    ===================================================== */
+        .flow>*+* {
+            margin-top: 1.2rem;
+        }
+
+        .flow> :first-child {
+            margin-top: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- =====================================================
+     COUNTDOWN STICKY BAR
+===================================================== -->
+    <div class="countdown-bar">
+        <div class="countdown-label">⏰ FINAL HOURS – 70% OFF ENDS IN</div>
+        <span class="countdown-cards">
+            <span class="time-group">
+                <span class="time-digits">
+                    <span class="time-card" id="cd-hh1">0</span>
+                    <span class="time-card" id="cd-hh2">5</span>
+                </span>
+                <span class="time-label">hh</span>
+            </span>
+            <span class="time-separator">:</span>
+            <span class="time-group">
+                <span class="time-digits">
+                    <span class="time-card" id="cd-mm1">0</span>
+                    <span class="time-card" id="cd-mm2">9</span>
+                </span>
+                <span class="time-label">mm</span>
+            </span>
+            <span class="time-separator">:</span>
+            <span class="time-group">
+                <span class="time-digits">
+                    <span class="time-card" id="cd-ss1">5</span>
+                    <span class="time-card" id="cd-ss2">5</span>
+                </span>
+                <span class="time-label">ss</span>
+            </span>
+        </span>
+    </div>
+
+    <!-- =====================================================
+     MAIN PAGE
+===================================================== -->
+    <main class="main-section">
+        <div class="post-content flow">
+
+            <div class="spacer-40"></div>
+
+            <!-- Hero headline -->
+            <p class="text-center font-xlarge px-50">
+                <strong><em>Do you ever feel left behind when it comes to using your computer?</em></strong>
+            </p>
+
+            <div class="spacer-20"></div>
+
+            <p class="text-center font-medium" style="color:#fff;">
+                If YES, then keep reading…
+            </p>
+
+            <!-- Hero product image -->
+            <figure class="alignfull">
+                <img src="assets/product-img.jpg" alt="Windows 11 for Seniors book" width="1080" height="1080"
+                    loading="eager">
+            </figure>
+
+            <!-- Product title & stars -->
+            <p class="text-center font-xlarge" style="color:#fff; font-weight:700; margin-top:1rem;">
+                Windows 11 for Seniors Bundle
+            </p>
+
+            <p class="text-center font-xlarge" style="color:#fff;">
+                ⭐⭐⭐⭐⭐
+            </p>
+
+            <!-- Price -->
+            <p class="text-center font-medium" style="color:#fff;">
+                <strong>$19.90</strong>
+                <span class="price-strike"><s>$59.70</s></span>
+                <strong>You Save 70%</strong>
+            </p>
+
+            <div class="spacer-10"></div>
+
+            <!-- BUY NOW button 1 -->
+            <div class="btn-wrap">
+                <a class="btn-buy" href="https://pay.hotmart.com/D104730250E?checkoutMode=10" id="buy-btn-1">
+                    <strong>BUY NOW</strong>
+                </a>
+            </div>
+
+            <div class="spacer-30"></div>
+
+            <!-- BUY 1 GET 3 section -->
+            <p class="text-center font-large" style="color:#fff;"><strong>BUY 1 GET 3</strong></p>
+
+            <p class="text-center font-medium" style="color:#fff;">
+                For a limited time only, here is what you'll get:
+            </p>
+
+            <!-- 3-books image -->
+            <figure class="alignfull">
+                <img src="assets/3books-bundle.jpg" alt="3 Books Bundle" width="1024" height="587" loading="lazy">
+            </figure>
+
+            <hr class="separator">
+
+            <div class="spacer-20"></div>
+
+            <!-- "Too complicated" myth section -->
+            <p class="text-center font-large" style="color:#fff;">
+                <strong><em>"Technology is too complicated for seniors."</em></strong>
+            </p>
+
+            <div class="spacer-20"></div>
+
+            <p class="text-center font-medium px-50" style="color:#fff;">
+                That's what many people think. But the truth is—it's not about age, it's about guidance.
+            </p>
+
+            <div class="spacer-20"></div>
+
+            <p class="text-center" style="color:#fff;">
+                <strong>The real problem isn't you.</strong>
+            </p>
+
+            <div class="spacer-20"></div>
+
+            <p class="text-center font-medium px-50" style="color:#fff;">
+                It's that most computer guides are written in a confusing, overly technical way that leaves seniors
+                frustrated, stuck, and ready to give up. <strong>That ends today.</strong>
+            </p>
+
+            <div class="spacer-20"></div>
+
+            <p class="text-center px-60" style="color:#fff;">
+                With our <strong><em>Windows 11 for Seniors Bundle</em></strong>, you'll finally have a step-by-step
+                guide created specifically for older adults—clear, simple, and practical. Whether you want to send
+                emails, browse the internet safely, protect your data, or discover powerful shortcuts, this bundle will
+                empower you to use your computer with confidence and independence.
+            </p>
+
+            <div class="spacer-20"></div>
+
+            <!-- IMAGE 1 -->
+            <figure class="alignfull">
+                <img src="assets/lifestyle-1.jpg" alt="Windows 11 for Seniors" width="970" height="600" loading="lazy">
+            </figure>
+
+            <!-- =====================================================
+         BLUE INFO BOX
+    ===================================================== -->
+            <div class="info-box">
+
+                <div class="spacer-20"></div>
+
+                <p class="text-center font-xlarge px-40" style="color:#fff;">
+                    📚 <strong>This Bestseller Includes:</strong>
+                </p>
+
+                <div class="spacer-20"></div>
+
+                <p class="text-center px-40" style="color:#fff;">
+                    ✅ <strong>The Complete Windows 11 Guide for Seniors</strong> – Master the basics of Windows 11 with
+                    simple instructions and large-print visuals.
+                </p>
+
+                <div class="spacer-20"></div>
+
+                <p class="text-center px-60" style="color:#fff;">
+                    ✅ <strong>Windows 11 Tips, Tricks, and Shortcuts</strong> – Save time, reduce frustration, and
+                    discover the hidden features that make your computer easier to use.
+                </p>
+
+                <div class="spacer-20"></div>
+
+                <p class="text-center px-40" style="color:#fff;">
+                    ✅ <strong>Windows 11 Security, Internet, and Email Made Easy</strong> – Learn how to browse safely,
+                    avoid scams, and stay connected with family and friends online.
+                </p>
+
+                <div class="spacer-20"></div>
+
+                <p class="text-center px-40" style="color:#fff;">
+                    ✅ <strong>Step-by-step explanations</strong> written in plain English, not tech jargon.
+                </p>
+
+                <div class="spacer-20"></div>
+
+                <p class="text-center px-40" style="color:#fff;">
+                    ✅ <strong>Large, easy-to-read text with illustrations</strong> designed for seniors.
+                </p>
+
+                <div class="spacer-20"></div>
+
+                <p class="text-center px-40" style="color:#fff;">
+                    ✅ <strong>Practical guidance for everyday use</strong>: from managing files to personalizing your
+                    desktop.
+                </p>
+
+                <div class="spacer-40"></div>
+
+                <!-- IMAGE 2 -->
+                <figure class="alignfull">
+                    <img src="assets/lifestyle-2.jpg" alt="Windows 11 Seniors" width="970" height="600" loading="lazy">
+                </figure>
+
+                <div class="spacer-10"></div>
+
+                <!-- 70% off banner -->
+                <figure class="alignfull">
+                    <img src="assets/70off-banner.jpg" alt="70% Off Limited Time" width="2400" height="900"
+                        loading="lazy" style="border:none;">
+                </figure>
+
+                <!-- Product image 2 -->
+                <figure class="alignfull">
+                    <img src="assets/product-bundle.jpg" alt="Windows 11 for Seniors Bundle" width="1080" height="1080"
+                        loading="lazy">
+                </figure>
+
+                <!-- Product title 2 -->
+                <p class="text-center font-xlarge px-50" style="color:#fff; font-weight:700;">
+                    Windows 11 for Seniors Bundle
+                </p>
+
+                <p class="text-center font-xlarge px-50" style="color:#fff;">
+                    ⭐⭐⭐⭐⭐
+                </p>
+
+                <p class="text-center font-medium" style="color:#fff;">
+                    <strong>$19.90</strong>
+                    <span class="price-strike"><s>$59.70</s></span>
+                    <strong>You Save 70%</strong>
+                </p>
+
+                <div class="spacer-10"></div>
+
+                <!-- BUY NOW button 2 -->
+                <div class="btn-wrap">
+                    <a class="btn-buy" href="https://pay.hotmart.com/D104730250E?checkoutMode=10" id="buy-btn-2">
+                        <strong>BUY NOW</strong>
+                    </a>
+                </div>
+
+                <div class="spacer-30"></div>
+
+                <p class="text-center font-medium px-40" style="color:#fff;">
+                    <strong>You don't have to feel left behind anymore.</strong>
+                </p>
+
+                <div class="spacer-20"></div>
+
+                <p class="text-center px-60" style="color:#fff;">
+                    With this bundle, you'll finally have <strong>clarity, independence, and peace of mind</strong> when
+                    using your computer. Instant direct digital download (After you complete the payment you will
+                    immediately have the option to download the product(s) from the final purchase page and you will
+                    also receive a download email shortly after).
+                </p>
+
+                <div class="spacer-20"></div>
+
+                <p class="text-center font-medium px-60" style="color:#fff;">
+                    <strong>And the best part?</strong>
+                </p>
+
+                <p class="text-center font-large px-60" style="color:#fff;">
+                    <strong>Today you can get it at <strong>70% OFF for a limited time.</strong></strong>
+                </p>
+
+                <div class="spacer-20"></div>
+
+                <hr class="separator">
+
+                <div class="spacer-20"></div>
+
+                <p class="text-center font-large px-40" style="color:#fff;">
+                    <strong>Why wait?</strong>
+                </p>
+
+                <div class="spacer-10"></div>
+
+                <p class="text-center font-medium px-40" style="color:#fff;">
+                    Join thousands of seniors who have already transformed the way they use technology.
+                </p>
+
+                <div class="spacer-10"></div>
+
+                <p class="text-center font-medium px-40" style="color:#fff;">
+                    Grab your Windows 11 for Seniors Bundle now and start feeling confident with your computer today.
+                </p>
+
+                <div class="spacer-20"></div>
+
+                <hr class="separator">
+
+                <div class="spacer-30"></div>
+
+                <p class="text-center font-medium px-40" style="color:#fff;">
+                    <strong><em>Order now and save 70% before this limited-time deal disappears.</em></strong>
+                </p>
+
+            </div><!-- /info-box -->
+
+            <!-- =====================================================
+         TESTIMONIALS
+    ===================================================== -->
+            <p class="text-center font-large" style="color:#fff; margin-top: 2rem;">
+                <em>Here's What People Are Saying About Us:</em>
+            </p>
+
+            <div class="gallery">
+                <figure>
+                    <img src="assets/review-1.jpg" alt="Customer Review 1" width="2000" height="2200" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="assets/review-2.jpg" alt="Customer Review 2" width="2000" height="2200" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="assets/review-3.jpg" alt="Customer Review 3" width="2000" height="2200" loading="lazy">
+                </figure>
+                <figure>
+                    <img src="assets/review-4.jpg" alt="Customer Review 4" width="2000" height="2200" loading="lazy">
+                </figure>
+            </div>
+
+            <div class="spacer-40"></div>
+
+        </div><!-- /post-content -->
+    </main>
+
+    <!-- =====================================================
+     FOOTER
+===================================================== -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a class="site-title" href="/">Smart Select</a>
+                <span class="site-tagline">Smart Select</span>
+            </div>
+            <nav class="footer-nav" aria-label="Footer Navigation">
+                <ul>
+                    <li><a href="/contato/">Contact Us</a></li>
+                    <li><a href="/privacy-policy/">Privacy Policy</a></li>
+                    <li><a href="/refund-and-returns-policy/">Refund and Returns Policy</a></li>
+                    <li><a href="/terms-conditions/">Terms &amp; Conditions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- =====================================================
+     COUNTDOWN SCRIPT
+===================================================== -->
+    <script>
+        (function () {
+            var storageKey = 'windowsCountdownEnd';
+            var endTime = sessionStorage.getItem(storageKey);
+
+            if (!endTime) {
+                var now = new Date();
+                endTime = now.getTime() + (5 * 60 * 1000);
+                sessionStorage.setItem(storageKey, endTime);
+            }
+
+            endTime = parseInt(endTime, 10);
+
+            function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+            function splitDigits(val, id1, id2) {
+                var s = pad(val);
+                document.getElementById(id1).textContent = s[0];
+                document.getElementById(id2).textContent = s[1];
+            }
+
+            function tick() {
+                var now = new Date().getTime();
+                var diff = endTime - now;
+
+                if (diff <= 0) {
+                    endTime = new Date().getTime() + (5 * 60 * 1000);
+                    sessionStorage.setItem(storageKey, endTime);
+                    diff = endTime - new Date().getTime();
+                }
+
+                var totalSeconds = Math.floor(diff / 1000);
+                var h = Math.floor(totalSeconds / 3600);
+                var m = Math.floor((totalSeconds % 3600) / 60);
+                var s = totalSeconds % 60;
+
+                splitDigits(h, 'cd-hh1', 'cd-hh2');
+                splitDigits(m, 'cd-mm1', 'cd-mm2');
+                splitDigits(s, 'cd-ss1', 'cd-ss2');
+            }
+
+            tick();
+            setInterval(tick, 1000);
+        })();
+    </script>
+
+</body>
+
+</html>
