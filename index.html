@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tai Chi – Bookworldlibrary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+    rel="stylesheet">
+  <style>
+    /* =====================================================
+       RESET & BASE
+    ===================================================== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-base: #f9f9f9;
+      --color-contrast: #111111;
+      --color-contrast-2: #636363;
+      --color-accent-red: #ac2403;
+      --color-cta-red: #e42628;
+      --color-green-btn: #4caf50;
+      --color-white: #ffffff;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-size-small: 0.9rem;
+      --font-size-medium: 1.05rem;
+      --font-size-large: clamp(1.39rem, 1.39rem + ((1vw - 0.2rem) * 0.767), 1.85rem);
+      --font-size-xlarge: clamp(1.85rem, 1.85rem + ((1vw - 0.2rem) * 1.083), 2.5rem);
+      --font-size-xxlarge: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 1.283), 3.27rem);
+      --spacing-10: 1rem;
+      --spacing-20: min(1.5rem, 2vw);
+      --spacing-30: min(2.5rem, 3vw);
+      --spacing-40: min(4rem, 5vw);
+      --spacing-50: min(6.5rem, 8vw);
+      --spacing-60: min(10.5rem, 13vw);
+      --content-max: 620px;
+      --wide-max: 1280px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--color-base);
+      color: var(--color-contrast);
+      font-family: var(--font-body);
+      font-size: var(--font-size-medium);
+      font-weight: 400;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--color-contrast);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    /* =====================================================
+       LAYOUT
+    ===================================================== */
+    .wp-site-blocks {
+      padding: 0;
+    }
+
+    .constrained {
+      max-width: var(--content-max);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--spacing-50);
+      padding-right: var(--spacing-50);
+    }
+
+    .has-global-padding {
+      padding-right: var(--spacing-50);
+      padding-left: var(--spacing-50);
+    }
+
+    .alignfull {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .alignfull img {
+      width: 100%;
+    }
+
+    .alignwide img {
+      width: 100%;
+    }
+
+    .spacer-10 {
+      height: 10px;
+      display: block;
+    }
+
+    .spacer-20 {
+      height: 20px;
+      display: block;
+    }
+
+    .spacer-30 {
+      height: 30px;
+      display: block;
+    }
+
+    .spacer-40 {
+      height: 40px;
+      display: block;
+    }
+
+    /* =====================================================
+       COUNTDOWN STICKY BAR
+    ===================================================== */
+    .countdown-bar {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      background: #e42628;
+      color: #fff;
+      text-align: center;
+      padding: 12px 16px;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, .25);
+      font-family: var(--font-body);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .countdown-label {
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      margin: 0;
+    }
+
+    .countdown-cards {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 4px;
+    }
+
+    .time-group {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .time-digits {
+      display: inline-flex;
+      flex-direction: row;
+      gap: 2px;
+    }
+
+
+    .time-card {
+      background: #fff;
+      color: #000;
+      font-size: 22px;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid #000;
+      min-width: 28px;
+      text-align: center;
+      line-height: 1;
+      display: inline-block;
+    }
+
+    .time-label {
+      font-size: 11px;
+      color: #fff;
+      font-style: italic;
+      margin-top: 4px;
+      display: block;
+    }
+
+    .time-separator {
+      font-size: 22px;
+      font-weight: bold;
+      color: #fff;
+      margin: 8px 4px 0;
+      line-height: 1;
+    }
+
+    /* =====================================================
+       MAIN SECTION (Dark red background)
+    ===================================================== */
+    .main-section {
+      background-color: #ac2403;
+      color: #fff;
+    }
+
+    /* =====================================================
+       POST CONTENT
+    ===================================================== */
+    .post-content {
+      padding-left: var(--spacing-50);
+      padding-right: var(--spacing-50);
+    }
+
+    /* =====================================================
+       TYPOGRAPHY HELPERS
+    ===================================================== */
+    .text-center {
+      text-align: center;
+    }
+
+    .text-white {
+      color: #fff !important;
+    }
+
+    .font-small {
+      font-size: var(--font-size-small);
+    }
+
+    .font-medium {
+      font-size: var(--font-size-medium);
+    }
+
+    .font-large {
+      font-size: var(--font-size-large);
+    }
+
+    .font-xlarge {
+      font-size: var(--font-size-xlarge);
+    }
+
+    .font-xxlarge {
+      font-size: var(--font-size-xxlarge);
+    }
+
+    .px-50 {
+      padding-left: var(--spacing-50);
+      padding-right: var(--spacing-50);
+    }
+
+    .px-60 {
+      padding-left: var(--spacing-60);
+      padding-right: var(--spacing-60);
+    }
+
+    .px-40 {
+      padding-left: var(--spacing-40);
+      padding-right: var(--spacing-40);
+    }
+
+    /* =====================================================
+       STRIKETHROUGH RED
+    ===================================================== */
+    .price-strike {
+      color: #e42628;
+    }
+
+    /* =====================================================
+       BUTTON
+    ===================================================== */
+    .btn-buy {
+      display: block;
+      margin: 0 auto;
+      width: 75%;
+      background-color: #4caf50;
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: var(--font-size-medium);
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      padding: 0.9rem 1.5rem;
+      border-radius: 20px;
+      box-shadow: 6px 6px 9px rgba(0, 0, 0, .2);
+      border: none;
+      cursor: pointer;
+      transition: background .2s ease, transform .15s ease;
+      letter-spacing: .03em;
+    }
+
+    .btn-buy:hover {
+      background-color: #388e3c;
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .btn-wrap {
+      display: flex;
+      justify-content: center;
+      margin: var(--spacing-10) 0;
+    }
+
+    /* =====================================================
+       SEPARATOR
+    ===================================================== */
+    .separator {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, .5);
+      width: 100%;
+      margin: 0;
+    }
+
+    /* =====================================================
+       DARK RED INFO BOX
+    ===================================================== */
+    .info-box {
+      background-color: #ac2403;
+      margin-bottom: 80px;
+      padding: 0;
+    }
+
+    .info-box p {
+      color: #fff;
+    }
+
+    /* =====================================================
+       GALLERY
+    ===================================================== */
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .gallery figure {
+      margin: 0;
+      width: 100%;
+    }
+
+    .gallery figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      box-shadow: 6px 6px 9px rgba(0, 0, 0, .2);
+    }
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+    footer {
+      background: var(--color-base);
+      padding: var(--spacing-50) var(--spacing-50);
+    }
+
+    .footer-inner {
+      max-width: var(--wide-max);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-brand {
+      flex: 0 0 30%;
+    }
+
+    .footer-brand .site-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--color-contrast);
+      display: block;
+      margin-bottom: .3rem;
+    }
+
+    .footer-brand .site-tagline {
+      font-size: var(--font-size-small);
+      color: var(--color-contrast-2);
+    }
+
+    .footer-nav {
+      flex: 1;
+    }
+
+    .footer-nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .6rem;
+    }
+
+    .footer-nav a {
+      color: var(--color-contrast);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: var(--font-size-small);
+    }
+
+    .footer-nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== MOBILE FIXES ===== */
+    html,
+    body {
+      overflow-x: hidden !important;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        max-width: 100vw !important;
+      }
+
+      .main-section,
+      .post-content {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        box-sizing: border-box !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+      }
+
+      /* Full-width images borda a borda */
+      .alignfull {
+        margin-left: -16px !important;
+        margin-right: -16px !important;
+        width: calc(100% + 32px) !important;
+        max-width: calc(100% + 32px) !important;
+      }
+
+      .alignfull img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+      }
+
+      /* Gallery full width */
+      .gallery {
+        max-width: 100% !important;
+      }
+
+      .gallery figure img {
+        width: 100% !important;
+        height: auto !important;
+      }
+
+      /* Font scaling */
+      .font-xlarge {
+        font-size: 1.4rem !important;
+      }
+
+      .font-xxlarge {
+        font-size: 1.6rem !important;
+      }
+
+      .font-large {
+        font-size: 1.2rem !important;
+      }
+
+      /* Reduce padding classes */
+      .px-60 {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+      }
+
+      .px-50 {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+      }
+
+      .px-40 {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+      }
+
+      /* Button full width */
+      .btn-buy {
+        width: 92% !important;
+        font-size: 1.1rem !important;
+        padding: 14px 20px !important;
+      }
+
+      /* Info box edge-to-edge */
+      .info-box {
+        margin-left: -16px !important;
+        margin-right: -16px !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        box-sizing: border-box !important;
+      }
+
+      /* Footer stacked */
+      .footer-brand {
+        flex: 0 0 100%;
+      }
+
+      .footer-nav ul {
+        align-items: center;
+      }
+    }
+
+    /* ===== END MOBILE FIXES ===== */
+
+    /* =====================================================
+       PARAGRAPH SPACING INSIDE SECTIONS
+    ===================================================== */
+    .flow>*+* {
+      margin-top: 1.2rem;
+    }
+
+    .flow> :first-child {
+      margin-top: 0;
+    }
+
+    /* emoji inline */
+    img.emoji {
+      display: inline !important;
+      border: none !important;
+      box-shadow: none !important;
+      height: 1em !important;
+      width: 1em !important;
+      margin: 0 0.07em !important;
+      vertical-align: -0.1em !important;
+    }
+  </style>
+<script>
+  window.pixelId = "69a901e3fc8cd5ab9fa80c17";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1477769170639862');
+fbq('init', '1453980406182561');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1477769170639862&ev=PageView&noscript=1"
+/></noscript>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1453980406182561&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2327194734441309');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2327194734441309&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2379632412865412');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2379632412865412&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2099512624167142');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2099512624167142&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<script>
+  window.pixelId = "69d7bc797ef80f6cd75c6808";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+</head>
+
+<body>
+
+  <!-- =====================================================
+     COUNTDOWN STICKY BAR
+===================================================== -->
+  <div class="countdown-bar">
+    <div class="countdown-label">⏰ FINAL HOURS – 70% OFF ENDS IN</div>
+    <span class="countdown-cards">
+      <span class="time-group">
+        <span class="time-digits">
+          <span class="time-card" id="cd-hh1">0</span>
+          <span class="time-card" id="cd-hh2">5</span>
+        </span>
+        <span class="time-label">hh</span>
+      </span>
+      <span class="time-separator">:</span>
+      <span class="time-group">
+        <span class="time-digits">
+          <span class="time-card" id="cd-mm1">0</span>
+          <span class="time-card" id="cd-mm2">9</span>
+        </span>
+        <span class="time-label">mm</span>
+      </span>
+      <span class="time-separator">:</span>
+      <span class="time-group">
+        <span class="time-digits">
+          <span class="time-card" id="cd-ss1">5</span>
+          <span class="time-card" id="cd-ss2">5</span>
+        </span>
+        <span class="time-label">ss</span>
+      </span>
+    </span>
+  </div>
+
+  <!-- =====================================================
+     MAIN PAGE
+===================================================== -->
+  <main class="main-section">
+    <div class="post-content flow">
+
+      <div class="spacer-40"></div>
+
+      <!-- Hero headline -->
+      <p class="text-center font-xlarge px-50">
+        <em><strong>Are you worried about losing balance, mobility, or strength as the years go by?</strong></em>
+      </p>
+
+      <div class="spacer-20"></div>
+
+      <p class="text-center font-medium px-50" style="color:#fff; max-width:620px; margin:0 auto;">
+        You're not alone — and the truth is, improving stability, flexibility, and confidence can be <em>simple</em>…
+        when you follow the right step-by-step routine designed specifically for seniors.
+      </p>
+
+      <div class="spacer-10"></div>
+
+      <!-- Hero product image -->
+      <figure class="alignfull">
+        <img src="https://bookworldlibrary.com/wp-content/uploads/2025/11/product-img-16.jpg"
+          alt="Tai Chi for Seniors book" width="1080" height="1080" loading="eager">
+      </figure>
+
+      <!-- Product title & stars -->
+      <p class="text-center font-xlarge" style="color:#fff; font-weight:700; margin-top:1rem;">
+        Tai Chi for Seniors + 2 BONUSES
+      </p>
+
+      <p class="text-center font-xlarge" style="color:#fff;">
+        ⭐⭐⭐⭐⭐
+      </p>
+
+      <!-- Price -->
+      <p class="text-center font-medium" style="color:#fff;">
+        <strong>$19.90</strong>
+        <span class="price-strike"><s>$59.70</s></span>
+        <strong>You Save 70%</strong>
+      </p>
+
+      <div class="spacer-10"></div>
+
+      <!-- BUY NOW button 1 -->
+      <div class="btn-wrap">
+        <a class="btn-buy" href="https://bookworldlibrary.com/?add-to-cart=183855" id="buy-btn-1">
+          <strong>BUY NOW</strong>
+        </a>
+      </div>
+
+      <div class="spacer-30"></div>
+
+      <!-- BUY 1 GET 3 section -->
+      <p class="text-center font-large" style="color:#fff;"><strong>BUY 1 GET 3</strong></p>
+
+      <p class="text-center font-medium" style="color:#fff;">
+        For a limited time only, here is what you'll get:
+      </p>
+
+      <!-- 3-books image -->
+      <figure class="alignfull">
+        <img src="https://bookworldlibrary.com/wp-content/uploads/2025/11/3books-7-1024x587.jpg" alt="3 Books Bundle"
+          width="1024" height="587" loading="lazy">
+      </figure>
+
+      <hr class="separator">
+
+      <div class="spacer-20"></div>
+
+      <!-- Why sounds too good -->
+      <p class="text-center font-large" style="color:#fff;">
+        <strong><em>Why does this offer sound too good to be true?</em></strong>
+      </p>
+
+      <div class="spacer-20"></div>
+
+      <p class="text-center font-medium px-50" style="color:#fff;">
+        <strong>We get it — three bestselling books for the price of one isn't something you see every day.</strong>
+      </p>
+
+      <div class="spacer-20"></div>
+
+      <p class="text-center font-medium px-50" style="color:#fff;">
+        Here's the simple truth: once a year, around this season, we run a special Reader Event to thank our audience
+        and make our most popular collections easier to access.
+      </p>
+
+      <div class="spacer-20"></div>
+
+      <p class="text-center font-medium px-50" style="color:#fff;">
+        Because we manage everything directly — from printing to fulfillment — we can skip retail markups and offer the
+        entire bundle (normally $59.70) for only $19.90.
+      </p>
+
+      <div class="spacer-20"></div>
+
+      <p class="text-center font-medium px-50" style="color:#fff;">
+        When the event ends, prices return to normal.
+      </p>
+
+      <div class="spacer-20"></div>
+
+      <hr class="separator">
+
+      <div class="spacer-20"></div>
+
+      <!-- Is Tai Chi complicated? -->
+      <p class="text-center font-large" style="color:#fff;">
+        <strong>"Isn't Tai Chi too complicated or too slow to make a real difference?"</strong>
+      </p>
+
+      <div class="spacer-20"></div>
+
+      <p class="text-center font-medium px-50" style="color:#fff;">
+        Many seniors believe Tai Chi is either <em>too gentle to matter</em>… or <em>too hard to learn</em>.
+      </p>
+
+      <div class="spacer-20"></div>
+
+      <p class="text-center" style="color:#fff;">
+        ❌ <strong>But that's simply not true.</strong>
+      </p>
+
+      <div class="spacer-20"></div>
+
+      <p class="text-center px-60" style="color:#fff;">
+        Modern research proves that Tai Chi is one of the safest, most effective forms of exercise for older adults. It
+        strengthens your core, improves balance, reduces stress, and helps you stay independent — without joint pain,
+        complicated movements, or the risk of injury.
+      </p>
+
+      <div class="spacer-20"></div>
+
+      <p class="text-center px-60" style="color:#fff;">
+        That's why this <strong>Tai Chi for Seniors 3-Book Bundle</strong> was created: A simple, step-by-step system
+        that teaches seniors how to regain mobility, improve stability, and feel younger in just a few minutes a day —
+        with clear instructions anyone can follow.
+      </p>
+
+      <div class="spacer-20"></div>
+
+      <p class="text-center px-50" style="color:#fff;">
+        This bundle takes away confusion, removes fear, and guides you from absolute beginner to confident movement… at
+        your own pace.
+      </p>
+
+      <div class="spacer-20"></div>
+
+      <!-- IMAGE 1 -->
+      <figure class="alignfull">
+        <img src="https://bookworldlibrary.com/wp-content/uploads/2025/11/IMAGE-1-4.jpg" alt="Tai Chi Benefits"
+          width="2300" height="1700" loading="lazy">
+      </figure>
+
+      <!-- =====================================================
+         DARK RED INFO BOX
+    ===================================================== -->
+      <div class="info-box">
+
+        <div class="spacer-20"></div>
+
+        <p class="text-center font-xlarge px-40" style="color:#fff;">
+          📚 <strong>What You'll Find Inside the 3-Book Tai Chi for Seniors Bundle:</strong>
+        </p>
+
+        <div class="spacer-20"></div>
+
+        <p class="text-center px-50" style="color:#fff;">
+          ✅ <strong>28-Day Tai Chi Program</strong> with gentle follow-along exercises for balance, mobility, and joint
+          relief
+        </p>
+
+        <div class="spacer-20"></div>
+
+        <p class="text-center px-60" style="color:#fff;">
+          ✅ <strong>10-Minute Daily Routine</strong> designed to improve stability and reduce falls
+        </p>
+
+        <div class="spacer-20"></div>
+
+        <p class="text-center px-60" style="color:#fff;">
+          ✅ <strong>Tai Chi for Weight Loss</strong>, with movements that boost energy and metabolism safely
+        </p>
+
+        <div class="spacer-20"></div>
+
+        <p class="text-center px-60" style="color:#fff;">
+          ✅ <strong>Tai Chi for Beginners</strong>, perfect for those who have never tried Tai Chi before
+        </p>
+
+        <div class="spacer-20"></div>
+
+        <p class="text-center px-60" style="color:#fff;">
+          ✅ <strong>Clear Step-By-Step Illustrations</strong> to help you follow each movement with confidence
+        </p>
+
+        <div class="spacer-20"></div>
+
+        <p class="text-center px-60" style="color:#fff;">
+          ✅ <strong>Breathing &amp; Relaxation Techniques</strong> to reduce stress and calm the mind
+        </p>
+
+        <div class="spacer-20"></div>
+
+        <p class="text-center px-60" style="color:#fff;">
+          ✅ <strong>A Complete Video Course Included</strong> so you can watch and follow along anytime
+        </p>
+
+        <div class="spacer-40"></div>
+
+        <!-- IMAGE 2 -->
+        <figure class="alignfull">
+          <img src="https://bookworldlibrary.com/wp-content/uploads/2025/11/IMAGE-2-3.jpg" alt="Tai Chi Seniors"
+            width="1280" height="800" loading="lazy">
+        </figure>
+
+        <div class="spacer-10"></div>
+
+        <!-- 70% off banner -->
+        <figure class="alignfull">
+          <img src="https://bookworldlibrary.com/wp-content/uploads/2025/11/70off-6.jpg" alt="70% Off Limited Time"
+            width="2400" height="900" loading="lazy" style="border:none;">
+        </figure>
+
+        <!-- Product image 2 -->
+        <figure class="alignfull">
+          <img src="https://bookworldlibrary.com/wp-content/uploads/2025/11/product-img-17.jpg"
+            alt="Tai Chi for Seniors Bundle" width="1080" height="1080" loading="lazy">
+        </figure>
+
+        <!-- Product title 2 -->
+        <p class="text-center font-xlarge px-50" style="color:#fff; font-weight:700;">
+          Tai Chi for Seniors + 2 BONUSES
+        </p>
+
+        <p class="text-center font-xlarge px-50" style="color:#fff;">
+          ⭐⭐⭐⭐⭐
+        </p>
+
+        <p class="text-center font-medium" style="color:#fff;">
+          <strong>$19.90</strong>
+          <span class="price-strike"><s>$59.70</s></span>
+          <strong>You Save 70%</strong>
+        </p>
+
+        <div class="spacer-10"></div>
+
+        <!-- BUY NOW button 2 -->
+        <div class="btn-wrap">
+          <a class="btn-buy" href="https://bookworldlibrary.com/?add-to-cart=183855" id="buy-btn-2">
+            <strong>BUY NOW</strong>
+          </a>
+        </div>
+
+        <div class="spacer-30"></div>
+
+        <p class="text-center font-medium px-40" style="color:#fff;">
+          <strong>Staying active, balanced, and independent doesn't have to be difficult.</strong>
+        </p>
+
+        <div class="spacer-20"></div>
+
+        <p class="text-center px-60" style="color:#fff;">
+          This bundle gives you everything you need to regain mobility, strengthen your body, and feel younger — all
+          from home, without equipment, pain, or long workouts. Normally priced at <strong>$59.70</strong>, today you
+          can get the entire Tai Chi for Seniors 3-Book Bundle — <strong>PLUS the complete video course</strong> — for
+          <strong>70% OFF</strong>.
+        </p>
+
+        <div class="spacer-20"></div>
+
+        <p class="text-center px-60" style="color:#fff;">
+          This is your moment to take control of your health, protect your independence, and start moving with
+          confidence again. Instant direct digital download (After you complete the payment you will immediately have
+          the option to download the product(s) from the final purchase page and you will also receive a download email
+          shortly after).
+        </p>
+
+        <div class="spacer-40"></div>
+
+        <hr class="separator">
+
+        <div class="spacer-20"></div>
+
+        <p class="text-center font-large px-40" style="color:#fff;">
+          <strong>Why wait?</strong>
+        </p>
+
+        <div class="spacer-10"></div>
+
+        <p class="text-center font-medium px-40" style="color:#fff;">
+          👉 <strong>Give your body the gentle, healing movement it's been waiting for.</strong>
+        </p>
+
+        <div class="spacer-20"></div>
+
+        <hr class="separator">
+
+        <div class="spacer-30"></div>
+
+        <p class="text-center font-medium px-40" style="color:#fff;">
+          <strong><em>Order now and save 70% before this limited-time deal disappears.</em></strong>
+        </p>
+
+      </div><!-- /info-box -->
+
+      <!-- =====================================================
+         TESTIMONIALS
+    ===================================================== -->
+      <p class="text-center font-large" style="color:#fff; margin-top: 2rem;">
+        <em>Here's What People Are Saying About Us:</em>
+      </p>
+
+      <div class="gallery">
+        <figure>
+          <img src="https://bookworldlibrary.com/wp-content/uploads/2025/11/1-3.jpg" alt="Customer Review 1"
+            width="2000" height="2200" loading="lazy">
+        </figure>
+        <figure>
+          <img src="https://bookworldlibrary.com/wp-content/uploads/2025/11/2-3.jpg" alt="Customer Review 2"
+            width="2000" height="2200" loading="lazy">
+        </figure>
+        <figure>
+          <img src="https://bookworldlibrary.com/wp-content/uploads/2025/11/3-3.jpg" alt="Customer Review 3"
+            width="2000" height="2200" loading="lazy">
+        </figure>
+        <figure>
+          <img src="https://bookworldlibrary.com/wp-content/uploads/2025/11/4-3.jpg" alt="Customer Review 4"
+            width="2000" height="2200" loading="lazy">
+        </figure>
+      </div>
+
+      <div class="spacer-40"></div>
+
+    </div><!-- /post-content -->
+  </main>
+
+  <!-- =====================================================
+     FOOTER
+===================================================== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="site-title" href="/">Smart Select</a>
+        <span class="site-tagline">Smart Select</span>
+      </div>
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <ul>
+          <li><a href="/contato/">Contact Us</a></li>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/refund-and-returns-policy/">Refund and Returns Policy</a></li>
+          <li><a href="/terms-conditions/">Terms &amp; Conditions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- =====================================================
+     COUNTDOWN SCRIPT
+===================================================== -->
+  <script>
+    (function () {
+      // Set countdown: resets every 24h based on session storage
+      var storageKey = 'taichiCountdownEnd';
+      var endTime = sessionStorage.getItem(storageKey);
+
+      if (!endTime) {
+        // Set a 1-hour countdown from now
+        var now = new Date();
+        endTime = now.getTime() + (5 * 60 * 1000);
+        sessionStorage.setItem(storageKey, endTime);
+      }
+
+      endTime = parseInt(endTime, 10);
+
+      function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+      function splitDigits(val, id1, id2) {
+        var s = pad(val);
+        document.getElementById(id1).textContent = s[0];
+        document.getElementById(id2).textContent = s[1];
+      }
+
+      function tick() {
+        var now = new Date().getTime();
+        var diff = endTime - now;
+
+        if (diff <= 0) {
+          // Reset timer
+          endTime = new Date().getTime() + (5 * 60 * 1000);
+          sessionStorage.setItem(storageKey, endTime);
+          diff = endTime - new Date().getTime();
+        }
+
+        var totalSeconds = Math.floor(diff / 1000);
+        var h = Math.floor(totalSeconds / 3600);
+        var m = Math.floor((totalSeconds % 3600) / 60);
+        var s = totalSeconds % 60;
+
+        splitDigits(h, 'cd-hh1', 'cd-hh2');
+        splitDigits(m, 'cd-mm1', 'cd-mm2');
+        splitDigits(s, 'cd-ss1', 'cd-ss2');
+      }
+
+      tick();
+      setInterval(tick, 1000);
+    })();
+  </script>
+
+</body>
+
+</html>
